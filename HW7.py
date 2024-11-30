@@ -18,25 +18,50 @@ def EllipticCurve(p,a,b):
         #c ^ p-1/2
         e = c**d
         f = int(e % p)
-        print(f'{x} = {e} {f}')
+        #print(f'{x} = {e} {f}')
         #now we find the amount of curves
         NumSolutions = 0
         for z in range(-1,2):
             if (z%p) == f:
                 if z ==-1:
-                    print("There is not a solution")
+                   NumSolutions = 0
                 elif z == 1:
-                    print("There are two solution")
                     NumSolutions = 2
                 elif z == 0:
-                    print("There is one solution")
                     NumSolutions = 1
     
         
         #print(f'{x} = {c} {c% p}')
         
-    #Step 2: Determining the matching value of y for a given x that has one.
-    #we use the number of soilutions previously calculated here
+        #Step 2: Determining the matching value of y for a given x that has one.
+        #we use the number of soilutions previously calculated here
+        match NumSolutions:
+            case 2:
+                g = int((p+1) / 4)
+                c = c **g
+                y1 = c % p
+                y2 = (y1 - p) * -1
+
+                #determing printing order
+                if y1 < y2:
+                    print(f'{x} {y1}')
+                    print(f'{x} {y2}')
+                else:
+                    print(f'{x} {y2}')
+                    print(f'{x} {y1}')
+
+
+
+
+
+                
+            case 1:
+                g = int((p+1) / 4)
+                c = c **g
+                y1 = c % p
+                print(f'{x} {y1}')
+
+
 
 
 
