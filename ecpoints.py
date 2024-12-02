@@ -55,11 +55,11 @@ def EllipticCurve(p,a,b):
                 print(f'{x} {y1}')
 
 
-
+#main function
 def main():
     inputs = input().split(' ')
 
-
+    #Accept console inputd
     p = int(inputs[0])
     a = int(inputs[1])
     b = int(inputs[2])
