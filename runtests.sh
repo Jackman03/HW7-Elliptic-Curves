@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 
 #Not my code, just coppied from someone in class
 #Shoutout to tutturu on discord
